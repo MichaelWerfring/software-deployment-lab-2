@@ -5,18 +5,20 @@ import './App.css'
 
 function App() {
   const [message, setMessage] = useState("");
-  useEffect(() => {
+  function fetchMessage(){
     fetch("https://orange-tree-06961b703.5.azurestaticapps.net/api/hello")
       .then((response) => response.text())
       .then((data) => setMessage(data))
       .catch((error) => console.error("Error fetching data", error));
-  }, []);
+  }
 
   return (
     <>
       <div>
-        <h1>Message:</h1>
-        <h2>{message}</h2>
+        <button onClick={fetchMessage}>
+          Fetch Message
+       </button>
+       <h1>Message: {message}</h1>
       </div>
     </>
   )
