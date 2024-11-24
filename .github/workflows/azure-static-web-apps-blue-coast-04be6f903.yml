@@ -8,6 +8,8 @@ on:
     types: [opened, synchronize, reopened, closed]
     branches:
       - main
+env:
+  VITE_BACKEND_URL: https://blue-coast-04be6f903.5.azurestaticapps.net
 jobs:
   build_and_deploy_job:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
@@ -18,12 +20,10 @@ jobs:
         with:
           submodules: true
           lfs: false
-      - name: Install Dependencies
-        run: npm install
-        working-directory: ./simple-frontend
-      - name: Build Application with Development Environment
-        run: NODE_ENV=development npm run build
-        working-directory: ./simple-frontend
+      - name: Test
+        id: test
+        run: npm test
+        
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
