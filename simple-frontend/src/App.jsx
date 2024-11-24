@@ -6,12 +6,12 @@ import './App.css'
 function App() {
   const [message, setMessage] = useState("");
   function fetchMessage(){
-    fetch("https://orange-tree-06961b703.5.azurestaticapps.net/api/hello")
+    console.log(process.env.BACKEND_URL);
+    fetch(process.env.BACKEND_URL + "/api/hello")
       .then((response) => response.text())
       .then((data) => setMessage(data))
       .catch((error) => console.error("Error fetching data", error));
   }
-
   return (
     <>
       <div>
