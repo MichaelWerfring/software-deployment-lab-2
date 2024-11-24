@@ -20,6 +20,9 @@ jobs:
         with:
           submodules: true
           lfs: false
+          
+      - name: Install dependencies
+        run: npm install
       - name: Test
         id: test
         run: npm test
