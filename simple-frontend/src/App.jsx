@@ -15,7 +15,8 @@ function App() {
   return (
     <>
       <div>
-        <h1>Message: {message}</h1>
+        <h1>Message:</h1>
+        <h2>{message}</h2>
       </div>
     </>
   )
