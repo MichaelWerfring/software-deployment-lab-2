@@ -8,7 +8,7 @@ function App() {
   useEffect(() => {
     fetch("https://orange-tree-06961b703.5.azurestaticapps.net/api/hello")
       .then((response) => response.text())
-      .then((data) => setMessage(data.message))
+      .then((data) => setMessage(data))
       .catch((error) => console.error("Error fetching data", error));
   }, []);
 
