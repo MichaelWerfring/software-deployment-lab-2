@@ -4,7 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  onst [message, setMessage] = useState("");
+  const [message, setMessage] = useState("");
   useEffect(() => {
     fetch("https://orange-tree-06961b703.5.azurestaticapps.net/api/hello")
       .then((response) => response.text())
