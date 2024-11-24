@@ -20,12 +20,10 @@ jobs:
         with:
           submodules: true
           lfs: false
-      - name: Install Dependencies
-        run: npm install
-        working-directory: ./simple-frontend
-      - name: Build Application with Development Environment
-        run: NODE_ENV=development npm run build
-        working-directory: ./simple-frontend
+      - name: Test
+        id: test
+        run: npm test
+        
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
