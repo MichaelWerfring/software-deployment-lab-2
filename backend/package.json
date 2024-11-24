@@ -6,7 +6,7 @@
     "test": "tests"
   },
   "scripts": {
-    "start": "node api/index.js",
+    "start": "node ./api/hello/index.js",
     "test": "jest"
   },
   "keywords": [],
@@ -18,7 +18,8 @@
   },
   "jest": {
     "testEnvironment": "node",
-    "forceExit": true
+    "forceExit": true,
+    "testMatch": ["**/tests/**/*.test.js"]
 },
   "devDependencies": {
     "jest": "^29.7.0",
