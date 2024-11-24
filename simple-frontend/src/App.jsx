@@ -7,7 +7,7 @@ function App() {
   onst [message, setMessage] = useState("");
   useEffect(() => {
     fetch("https://orange-tree-06961b703.5.azurestaticapps.net/api/hello")
-      .then((response) => response.json())
+      .then((response) => response.text())
       .then((data) => setMessage(data.message))
       .catch((error) => console.error("Error fetching data", error));
   }, []);

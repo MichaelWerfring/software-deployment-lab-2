@@ -31,7 +31,7 @@ jobs:
           app_location: "./simple-frontend" # App source code path
           api_location: "./backend" # Api source code path - optional
           output_location: "dist" # Built app content directory - optional
-          api_build_command: "npm install && npm start"
+          ##api_build_command: "npm install && npm start"
           ###### End of Repository/Build Configurations ######
 
   close_pull_request_job:
