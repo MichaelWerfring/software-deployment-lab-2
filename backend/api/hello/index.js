@@ -25,6 +25,6 @@ app.http('hello', {
     methods: ['POST', 'GET'],
     handler: async (request, context) => {
         context.log('Http function was triggered.');
-        return { body: 'Hello, world!' };
+        return { body: 'Hello from backend!' };
     }
 });
