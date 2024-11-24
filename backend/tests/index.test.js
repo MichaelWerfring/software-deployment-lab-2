@@ -1,10 +1,27 @@
-const request = require('supertest');
-const { app } = require('../api/hello/index'); 
+const { app } = require('@azure/functions'); // Your Azure Functions app, not directly needed in the test
+const helloHandler = require('../api/hello/index'); // Update with the actual path of your handler
 
-describe('GET /api/hello', () => {
-    it('should return a message', async () => {
-        const res = await request(app).get('/api/hello');
-        expect(res.statusCode).toEqual(200);
-        expect(res.body).toHaveProperty('message', 'Hello from backend!');
+describe('helloHandler Function', () => {
+    let context;
+    let request;
+
+    beforeEach(() => {
+        context = {
+            log: jest.fn(), 
+        };
+
+        request = {
+            method: 'GET', 
+            body: {},
+            query: {},
+        };
+    });
+
+    it('should log message and return "Hello from backend!"', async () => {
+        const response = await helloHandler(request, context);
+
+        expect(context.log).toHaveBeenCalledWith('Http function was triggered.');
+
+        expect(response.body).toBe('Hello from backend!');
     });
 });
