@@ -14,13 +14,16 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@azure/functions": "^4.6.0",
     "express": "^4.21.1"
   },
   "jest": {
     "testEnvironment": "node",
     "forceExit": true,
-    "testMatch": ["**/tests/**/*.test.js"]
-},
+    "testMatch": [
+      "**/tests/**/*.test.js"
+    ]
+  },
   "devDependencies": {
     "jest": "^29.7.0",
     "supertest": "^7.0.0"
