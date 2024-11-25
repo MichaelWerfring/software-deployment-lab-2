@@ -82,3 +82,12 @@ git checkout main
 git merge ui-improvements
 git push
 ```
+
+When pushing main now, the deployment process will start and after a few minutes should look like the image below this in GitHub.
+
+![alt text](docs/dev_deploy_success.png)
+
+
+After verifying the changes in the dev Web App they can be deployed to production.
+![alt text](docs/changed_ui.png)
+
