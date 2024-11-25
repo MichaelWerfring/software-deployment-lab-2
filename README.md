@@ -69,3 +69,16 @@ It can be seen, that the text did not change when navigating to the development 
 
 ## Releasing changes - The correct way
 This time the changes will be done to the frontend which is not tested curently. It will be assumed, that the faulty changes from the preceding step have been reverted by the developer.
+
+```
+git branch ui-improvements
+git checkout ui-improvements
+
+... doing changes
+
+git add .
+git commit -m "Improving Button text"
+git checkout main
+git merge ui-improvements
+git push
+```
