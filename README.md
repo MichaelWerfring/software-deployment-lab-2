@@ -41,11 +41,31 @@ __Steps:__
 `name` : swd-lab-2-app-prod
 
 The images shows azure insights on the production server, after sending requests consequetively for a few seconds.
-![Live monitoring](docs/image.png)
+![Live monitoring](docs/insights.png)
 
-## Releasing changes
+## Releasing changes - The wrong way
 This part describes the workflow for releasing changes to the application. 
 For this example the text sent from the backend will be changed.
-Firstly a faulty deployment will be simulated which is detected automatically by jes unit tests.
-branch new-text
+Firstly a faulty deployment will be simulated which is detected automatically by jest unit tests.
+
+```
+git branch new-text
 git checkout new-text
+
+...doing changes in /api/hello/index.js
+
+git add .
+git commit -m "Changing hello message on backend"
+git checkout main 
+git merge new-text
+git push
+```
+
+![alt text](docs/test_failure.png)
+
+It can be seen, that the text did not change when navigating to the development Website.
+
+![alt text](docs/dev_working.png)
+
+## Releasing changes - The correct way
+This time the changes will be done to the frontend which is not tested curently. It will be assumed, that the faulty changes from the preceding step have been reverted by the developer.
