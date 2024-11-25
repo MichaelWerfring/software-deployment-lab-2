@@ -91,3 +91,11 @@ When pushing main now, the deployment process will start and after a few minutes
 After verifying the changes in the dev Web App they can be deployed to production.
 ![alt text](docs/changed_ui.png)
 
+```
+git checkout release
+git merge main
+git push
+```
+Now the Workflow will run and changes be in the prodction environment. 
+![alt text](docs/prod_deploy_success.png)
+![alt text](docs/changes_ui_prod.png)
