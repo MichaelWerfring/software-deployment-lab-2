@@ -15,7 +15,7 @@ function App() {
     <>
       <div>
         <button onClick={fetchMessage}>
-          Fetch Message
+          Click here to fetch a Message!
        </button>
        <h1>Message: {message}</h1>
       </div>
